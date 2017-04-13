@@ -10,7 +10,7 @@ class Api::V1::ItemsController < ApplicationController
 
   def destroy
     Item.find(params["id"]).destroy
-    redirect_to root_path
+    head :no_content
   end
 
   def new

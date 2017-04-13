@@ -39,6 +39,7 @@ describe 'as a user I' do
 
     delete "/api/v1/items/#{item.id}"
 
+    expect(response.status).to eq(204)
 
     expect(Item.count).to_not eq(2)
     expect(Item.count).to_not eq(8)
