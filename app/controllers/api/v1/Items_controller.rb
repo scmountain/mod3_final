@@ -14,10 +14,9 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def new
-    item = Item.new(strong_params)
+    item = Item.create(strong_params)
     if item.save
-      Item.create(strong_params)
-      render json: Item.find(params["id"])
+      render json: Item.last
     end
   end
 

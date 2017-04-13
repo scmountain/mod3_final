@@ -49,14 +49,14 @@ describe 'as a user I' do
 
   it "can send create request for 1 item" do
     # uri = URI.encode_www_form(www.yahoo.com/goat)
-    post "/api/v1/items/new?name=goat&description=its%20a%20goat&image_url=not%20cool%20sal"
+    post "/api/v1/items/new?name=goat&description=its%20a%20goat&image_url=uri%20not%20working"
 
     expect(response).to be_success
 
     item = JSON(response.body)
     expect(item["name"]).to eq("goat")
     expect(item["description"]).to eq("its a goat")
-    expect(item["image_url"]).to eq("www.yahoo.com/goat")
+    expect(item["image_url"]).to eq("uri not working")
     expect(item["name"]).to_not eq("cow")
   end
 end
