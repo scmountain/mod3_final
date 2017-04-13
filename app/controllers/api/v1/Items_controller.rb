@@ -8,4 +8,11 @@ class Api::V1::ItemsController < ApplicationController
     render json: Item.find(params["id"])
   end
 
+  def destroy
+    Item.find(params["id"]).destroy
+    redirect_to root_path
+  end
+
+
+
 end
