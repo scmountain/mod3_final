@@ -3,16 +3,20 @@ require 'rails_helper'
 feature "as a user" do
   scenario "when i visit '/'" do
     visit root_path
-    fill_in :zip, with: "80202"
+    fill_in "zipcode", with: "80202"
+    save_and_open_page
+    click_on "search"
+
+    expect(current_path).to eq '/search'
+    # expect(page).to have_content("16 Total Stores")
+    # expect(page).to have_content(10 stores)
   end
 end
 
 
 
 
-# As a user
-# When I visit "/"
-# And I fill in a search box with "80202" and click "search"
+
 # Then my current path should be "/search" (ignoring params)
 # And I should see stores within 25 miles of 80202
 # And I should see a message that says "16 Total Stores"

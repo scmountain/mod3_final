@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  def new
-    @store = Store.new
+  def index
+    Store.search(params[:zipcode])
   end
 end
