@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'stores#index'
 
-  resources :search,  only: [:index, :show]
+  get '/search', to:  'search#show'
   resources :stores,  only: [:index, :show]
   resources :items,  only: [:index, :show]
   resources :orders, only: [:index, :show]

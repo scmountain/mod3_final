@@ -3,12 +3,11 @@ require 'rails_helper'
 feature "as a user" do
   scenario "when i visit '/'" do
     visit root_path
-    fill_in "zipcode", with: "80202"
-    save_and_open_page
+    fill_in :zipcode, with: "80202"
     click_on "search"
 
     expect(current_path).to eq '/search'
-    # expect(page).to have_content("16 Total Stores")
+    expect(page).to have_content("16 Total Stores")
     # expect(page).to have_content(10 stores)
   end
 end
