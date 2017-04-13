@@ -12,8 +12,8 @@ describe 'as a user I can send' do
 
     items = JSON(response.body)
     expect(items.count).to eq(3)
-    expect(items.first.name).to eq("goat")
-    expect(items.last.name).to eq("cow")
-    expect(items.last.name).to_not eq("chicken")
+    expect(items.first["name"]).to eq("goat")
+    expect(items.last["name"]).to eq("pig")
+    expect(items.last["name"]).to_not eq("chicken")
   end
 end
