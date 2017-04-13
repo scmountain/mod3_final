@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'uri'
 
 describe 'as a user I' do
   it "can send request, see all items" do
@@ -47,8 +48,8 @@ describe 'as a user I' do
   end
 
   it "can send create request for 1 item" do
-
-    post "/api/v1/items/new?name=goat&description=its20%a20%goat&image_url="
+    # uri = URI.encode_www_form(www.yahoo.com/goat)
+    post "/api/v1/items/new?name=goat&description=its%20a%20goat&image_url=not%20cool%20sal"
 
     expect(response).to be_success
 

@@ -13,6 +13,17 @@ class Api::V1::ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def new
+    item = Item.new(strong_params)
+    if item.save
+      Item.create(strong_params)
+      render json: Item.find(params["id"])
+    end
+  end
 
+  private
+  def strong_params
+    params.permit(:name, :description, :image_url)
+  end
 
 end
