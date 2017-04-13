@@ -1,3 +1,6 @@
-class Store < ActiveRecord::Base
+class Store < ApplicationController
+  def all
+    self.all
+  end
 
 end

@@ -2,8 +2,10 @@ require 'rails_helper'
 
 feature "as a user" do
   scenario "when i visit '/'" do
-    visit root_path
 
+    visit root_path
+  save_and_open_page
+    fill_in :zip, with: "80202"
   end
 end
 
