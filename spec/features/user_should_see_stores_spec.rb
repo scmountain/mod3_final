@@ -7,6 +7,8 @@ feature "as a user" do
     click_on "search"
     expect(current_path).to eq '/search'
     expect(page).to have_content("2 Total Stores")
+    expect(page).to have_content("CHERRY CREEK")
+    expect(page).to have_content("BELMAR")
   end
 end
 
