@@ -1,7 +1,5 @@
-<%= @result.all.count %>
-<% @result.each do |store| %>
+<%= @stores.count %> Total Stores<br>
+<% @stores.each do |store| %>
 <%=  store.name %>
-<%=  store.distance %>
-<%=  store.phone %>
-<%=  store.store_type %>
+<%=  store.store_type %><br>
 <% end %>
