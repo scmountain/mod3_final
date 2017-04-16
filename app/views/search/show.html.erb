@@ -1,8 +1,11 @@
-Total Stores: <%= @store_count %><br><br>
+<%= @store_count %> Total Stores<br><br>
+
 <% @stores.each do |store| %>
+<div class="store_card">
 <%=  store.name %><br>
 <%=  store.city %><br>
 <%=  store.distance %><br>
 <%=  store.phone %><br>
 <%=  store.store_type %><br><br><br>
+</div>
 <% end %>

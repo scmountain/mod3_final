@@ -6,10 +6,14 @@ feature "as a user" do
     fill_in :zipcode, with: "80202"
     click_on "search"
     expect(current_path).to eq '/search'
-    save_and_open_page
+
     expect(page).to have_content("16 Total Stores")
-    expect(page).to have_content("CHERRY CREEK")
-    expect(page).to have_content("BELMAR")
+    expect(page).to have_content("DENVER")
+    expect(page).to have_content(3.45)
+    expect(page).to have_content("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+    expect(page).to have_content("303-270-9189")
+    expect(page).to have_content("Mobile SAS")
+    expect(page).to have_css('.store_card', count: 10)
   end
 end
 
@@ -17,6 +21,4 @@ end
 
 
 
-# And I should see a message that says "16 Total Stores"
 # And I should see exactly 10 results
-# And I should see the long name, city, distance, phone number and store type for each of the 10 results
