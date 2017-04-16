@@ -6,7 +6,8 @@ feature "as a user" do
     fill_in :zipcode, with: "80202"
     click_on "search"
     expect(current_path).to eq '/search'
-    expect(page).to have_content("2 Total Stores")
+    save_and_open_page
+    expect(page).to have_content("16 Total Stores")
     expect(page).to have_content("CHERRY CREEK")
     expect(page).to have_content("BELMAR")
   end
